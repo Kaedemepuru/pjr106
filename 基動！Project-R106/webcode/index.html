@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作品集</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Pj-R106</a>
+      <ul class="nav-links">
+        <li><a href="#works" data-i18n="navWorks">作品</a></li>
+        <li><a href="#about" data-i18n="navAbout">關於</a></li>
+        <li><a href="#contact" data-i18n="navContact">聯絡</a></li>
+      </ul>
+      <div class="lang-switch header-lang-switch">
+        <button class="lang-btn active" data-lang="cn">中</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow" data-i18n="heroEyebrow">pj R106 2026</p>
+      <h1 id="hero-title" class="hero-title" data-i18n="heroTitle">基動計畫<br /><span>No.R106</span></h1>
+    </div>
+  </section>
+
+  <section id="works" class="works">
+    <div class="works-header">
+      <h2 data-i18n="worksHeading">課程作品</h2>
+      <p data-i18n="worksSubheading">每一幀，都是一次選擇。</p>
+    </div>
+
+    <div id="works-grid" class="works-grid"></div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="about-eyebrow" data-i18n="aboutEyebrow">關於本網站</p>
+        <h2 data-i18n="aboutTitle"></h2>
+        <p class="about-maintext" data-about-main></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contact-shell">
+      <img class="contact-logo" src="../logo.png" alt="Pj-R106 logo" />
+      <p class="contact-info" data-contact-info></p>
+      <a href="mailto:your@email.com" class="contact-btn" data-i18n="contactBtn">寫信給我</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Pj-R106 · All rights reserved.</p>
+  </footer>
+q
+  <script src="main.js"></script>
+</body>
+</html>
