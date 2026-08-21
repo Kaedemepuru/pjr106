@@ -78,7 +78,7 @@ body {
   padding: calc(var(--nav-h) + 40px) 24px 80px;
   background:
     linear-gradient(120deg, rgba(3,7,18,0.84) 10%, rgba(3,7,18,0.55) 55%, rgba(3,7,18,0.82) 100%),
-    url('../main_idea.jpg') center/cover no-repeat;
+    url('main_idea.jpg') center/cover no-repeat;
   overflow: hidden;
   background-size: cover;
   background-position: center;

@@ -76,8 +76,8 @@ const works = [
     titleEN: '',
     descCN: '',
     descEN: '',
-    cover: '../works/work01/cover.png',
-    preview: '../works/work01/preview.gif',
+    cover: 'works/work01/cover.png',
+    preview: 'works/work01/preview.gif',
     youtubeUrl: '',
     href: 'work.html?work=work01',
     coverRatio: '16:9'
@@ -90,8 +90,8 @@ const works = [
     titleEN: '',
     descCN: '',
     descEN: '',
-    cover: '../works/work02/cover.png',
-    preview: '../works/work02/preview.gif',
+    cover: 'works/work02/cover.png',
+    preview: 'works/work02/preview.gif',
     youtubeUrl: '',
     href: 'work.html?work=work02',
     coverRatio: '1:1'
@@ -104,8 +104,8 @@ const works = [
     titleEN: '',
     descCN: '',
     descEN: '',
-    cover: '../works/work03/cover.png',
-    preview: '../works/work03/preview.gif',
+    cover: 'works/work03/cover.png',
+    preview: 'works/work03/preview.gif',
     youtubeUrl: '',
     href: 'work.html?work=work03',
     coverRatio: '4:3'
@@ -118,8 +118,8 @@ const works = [
     titleEN: '',
     descCN: '',
     descEN: '',
-    cover: '../works/work04/cover.png',
-    preview: '../works/work04/preview.gif',
+    cover: 'works/work04/cover.png',
+    preview: 'works/work04/preview.gif',
     youtubeUrl: '',
     href: 'work.html?work=work04',
     coverRatio: '3:4'
@@ -132,8 +132,8 @@ const works = [
     titleEN: '',
     descCN: '',
     descEN: '',
-    cover: '../works/work05/cover.png',
-    preview: '../works/work05/preview.gif',
+    cover: 'works/work05/cover.png',
+    preview: 'works/work05/preview.gif',
     youtubeUrl: '',
     href: 'work.html?work=work05',
     coverRatio: '16:9'
@@ -206,13 +206,13 @@ async function loadTextFile(url) {
 
 async function loadWorksData() {
   for (const work of works) {
-    work.titleCN = (await loadTextFile(`../works/${work.id}/title_cn.txt`)) || getFallbackTitle(work.id, 'cn');
-    work.titleEN = (await loadTextFile(`../works/${work.id}/title_en.txt`)) || getFallbackTitle(work.id, 'en');
-    work.descCN = (await loadTextFile(`../works/${work.id}/profile_cn.txt`)) || getFallbackProfile(work.id, 'cn');
-    work.descEN = (await loadTextFile(`../works/${work.id}/profile_en.txt`)) || getFallbackProfile(work.id, 'en');
-    work.youtubeUrl = getYouTubeEmbedUrl(await loadTextFile(`../works/${work.id}/url.txt`));
+    work.titleCN = (await loadTextFile(`works/${work.id}/title_cn.txt`)) || getFallbackTitle(work.id, 'cn');
+    work.titleEN = (await loadTextFile(`works/${work.id}/title_en.txt`)) || getFallbackTitle(work.id, 'en');
+    work.descCN = (await loadTextFile(`works/${work.id}/profile_cn.txt`)) || getFallbackProfile(work.id, 'cn');
+    work.descEN = (await loadTextFile(`works/${work.id}/profile_en.txt`)) || getFallbackProfile(work.id, 'en');
+    work.youtubeUrl = getYouTubeEmbedUrl(await loadTextFile(`works/${work.id}/url.txt`));
 
-    const ratioText = (await loadTextFile(`../works/${work.id}/cover_ratio.txt`))?.trim();
+    const ratioText = (await loadTextFile(`works/${work.id}/cover_ratio.txt`))?.trim();
     if (ratioText) {
       work.coverRatio = ratioText;
     } else {
@@ -222,9 +222,9 @@ async function loadWorksData() {
 }
 
 async function loadPageContent() {
-  pageContent.cn.aboutMainText = (await loadTextFile('../maintext_cn.txt')) || '這是展覽介紹。';
-  pageContent.en.aboutMainText = (await loadTextFile('../maintext_en.txt')) || 'This is the exhibition introduction.';
-  const contactText = (await loadTextFile('../contact.txt'))?.trim();
+  pageContent.cn.aboutMainText = (await loadTextFile('maintext_cn.txt')) || '這是展覽介紹。';
+  pageContent.en.aboutMainText = (await loadTextFile('maintext_en.txt')) || 'This is the exhibition introduction.';
+  const contactText = (await loadTextFile('contact.txt'))?.trim();
   pageContent.cn.contactText = contactText || '歡迎聯絡。';
   pageContent.en.contactText = contactText || 'Feel free to contact me.';
   const emailMatch = contactText?.match(/([\w.-]+@[\w.-]+\.[A-Za-z]{2,})/);
